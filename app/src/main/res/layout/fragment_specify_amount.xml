@@ -34,9 +34,7 @@
                 android:layout_height="wrap_content"
                 app:helperText="$0.00"
                 app:errorEnabled="true"
-                android:layout_weight="60"
-
-        >
+                android:layout_weight="60">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"

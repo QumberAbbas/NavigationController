@@ -9,6 +9,8 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import java.lang.Exception
 
 
 class MainFragment : Fragment(), View.OnClickListener {
@@ -30,12 +32,14 @@ class MainFragment : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.view_balance_btn).setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
-        when(v!!.id){
-
+    override fun onClick(v: View) {
+        val action = when(v.id){
+            R.id.view_transactions_btn -> MainFragmentDirections.actionViewTransactionFragment()
+            R.id.send_money_btn -> MainFragmentDirections.actionRecipientFragment()
+            R.id.view_balance_btn -> MainFragmentDirections.actionViewBalanceFragment()
+            else -> throw Exception("No id found")
         }
+        v.findNavController().navigate(action)
     }
-
-
 
 }

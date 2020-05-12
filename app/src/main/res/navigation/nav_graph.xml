@@ -9,49 +9,87 @@
         android:id="@+id/mainFragment"
         android:name="com.coders.androidnavigationcomponent.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_recipient_fragment"
-            app:destination="@id/chooseRecipientFragment" />
+            app:destination="@id/transferAmountNavigation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_view_balance_fragment"
-            app:destination="@id/viewBalanceFragment" />
+            app:destination="@id/viewBalanceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_view_transaction_fragment"
-            app:destination="@id/viewTransactionFragment" />
+            app:destination="@id/viewTransactionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
-    <fragment
-        android:id="@+id/chooseRecipientFragment"
-        android:name="com.coders.androidnavigationcomponent.ChooseRecipientFragment"
-        android:label="ChooseRecipientFragment"
-        tools:layout="@layout/fragment_choose_recipient">
-        <action
-            android:id="@+id/action_amount_fragment"
-            app:destination="@id/specifyAmountFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/specifyAmountFragment"
-        android:name="com.coders.androidnavigationcomponent.SpecifyAmountFragment"
-        android:label="fragment_specify_amount"
-        tools:layout="@layout/fragment_specify_amount" >
-        <action
-            android:id="@+id/action_confirmation_fragment"
-            app:destination="@id/confirmationFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/viewTransactionFragment"
         android:name="com.coders.androidnavigationcomponent.ViewTransactionFragment"
         android:label="fragment_view_transaction"
         tools:layout="@layout/fragment_view_transaction" />
     <fragment
-        android:id="@+id/confirmationFragment"
-        android:name="com.coders.androidnavigationcomponent.ConfirmationFragment"
-        android:label="ConfirmationFragment"
-        tools:layout="@layout/fragment_confirmation">
-    </fragment>
-    <fragment
         android:id="@+id/viewBalanceFragment"
         android:name="com.coders.androidnavigationcomponent.ViewBalanceFragment"
         android:label="fragment_view_balance"
         tools:layout="@layout/fragment_view_balance" />
+    <navigation
+        android:id="@+id/transferAmountNavigation"
+        app:startDestination="@id/chooseRecipientFragment">
+        <fragment
+            android:id="@+id/chooseRecipientFragment"
+            android:name="com.coders.androidnavigationcomponent.ChooseRecipientFragment"
+            android:label="ChooseRecipientFragment"
+            tools:layout="@layout/fragment_choose_recipient">
+            <action
+                android:id="@+id/action_amount_fragment"
+                app:destination="@id/specifyAmountFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+        </fragment>
+        <fragment
+            android:id="@+id/specifyAmountFragment"
+            android:name="com.coders.androidnavigationcomponent.SpecifyAmountFragment"
+            android:label="fragment_specify_amount"
+            tools:layout="@layout/fragment_specify_amount">
+            <action
+                android:id="@+id/action_confirmation_fragment"
+                app:destination="@id/confirmationFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+            <argument
+                android:name="name"
+                android:defaultValue="None" />
+        </fragment>
+        <fragment
+            android:id="@+id/confirmationFragment"
+            android:name="com.coders.androidnavigationcomponent.ConfirmationFragment"
+            android:label="ConfirmationFragment"
+            tools:layout="@layout/fragment_confirmation">
+            <action
+                android:id="@+id/action_goBack"
+                app:popUpTo="@+id/mainFragment"
+                app:popUpToInclusive="true" />
+            <argument
+                android:name="name"
+                android:defaultValue="None" />
+            <argument android:name="amount"
+                app:argType="com.coders.androidnavigationcomponent.Money"/>
+
+        </fragment>
+    </navigation>
 </navigation>
