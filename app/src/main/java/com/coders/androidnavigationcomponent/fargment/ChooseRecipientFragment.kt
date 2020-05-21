@@ -1,13 +1,13 @@
-package com.coders.androidnavigationcomponent
+package com.coders.androidnavigationcomponent.fargment
 
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.coders.androidnavigationcomponent.R
 import kotlinx.android.synthetic.main.fragment_choose_recipient.*
 
 
@@ -17,7 +17,6 @@ class ChooseRecipientFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_choose_recipient, container, false)
     }
 
@@ -30,7 +29,11 @@ class ChooseRecipientFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View) {
          when(v.id){
-            R.id.next_btn ->  v.findNavController().navigate(ChooseRecipientFragmentDirections.actionAmountFragment(input_recipient.text.toString()))
+            R.id.next_btn ->  v.findNavController().navigate(
+                ChooseRecipientFragmentDirections.actionAmountFragment(
+                    input_recipient.text.toString()
+                )
+            )
             R.id.cancel_btn -> v.findNavController().popBackStack()
         }
     }

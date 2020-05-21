@@ -1,4 +1,4 @@
-package com.coders.androidnavigationcomponent
+package com.coders.androidnavigationcomponent.fargment
 
 
 import android.os.Bundle

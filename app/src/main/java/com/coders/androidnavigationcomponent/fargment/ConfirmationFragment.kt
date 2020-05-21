@@ -1,4 +1,4 @@
-package com.coders.androidnavigationcomponent
+package com.coders.androidnavigationcomponent.fargment
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.coders.androidnavigationcomponent.R
 import kotlinx.android.synthetic.main.fragment_confirmation.*
 
 

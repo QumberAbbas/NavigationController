@@ -35,20 +35,22 @@
 
     <fragment
         android:id="@+id/viewTransactionFragment"
-        android:name="com.coders.androidnavigationcomponent.ViewTransactionFragment"
+        android:name="com.coders.androidnavigationcomponent.fargment.ViewTransactionFragment"
         android:label="fragment_view_transaction"
         tools:layout="@layout/fragment_view_transaction" />
+
     <fragment
         android:id="@+id/viewBalanceFragment"
-        android:name="com.coders.androidnavigationcomponent.ViewBalanceFragment"
+        android:name="com.coders.androidnavigationcomponent.fargment.ViewBalanceFragment"
         android:label="fragment_view_balance"
         tools:layout="@layout/fragment_view_balance" />
+
     <navigation
         android:id="@+id/transferAmountNavigation"
         app:startDestination="@id/chooseRecipientFragment">
         <fragment
             android:id="@+id/chooseRecipientFragment"
-            android:name="com.coders.androidnavigationcomponent.ChooseRecipientFragment"
+            android:name="com.coders.androidnavigationcomponent.fargment.ChooseRecipientFragment"
             android:label="ChooseRecipientFragment"
             tools:layout="@layout/fragment_choose_recipient">
             <action
@@ -61,7 +63,7 @@
         </fragment>
         <fragment
             android:id="@+id/specifyAmountFragment"
-            android:name="com.coders.androidnavigationcomponent.SpecifyAmountFragment"
+            android:name="com.coders.androidnavigationcomponent.fargment.SpecifyAmountFragment"
             android:label="fragment_specify_amount"
             tools:layout="@layout/fragment_specify_amount">
             <action
@@ -77,7 +79,7 @@
         </fragment>
         <fragment
             android:id="@+id/confirmationFragment"
-            android:name="com.coders.androidnavigationcomponent.ConfirmationFragment"
+            android:name="com.coders.androidnavigationcomponent.fargment.ConfirmationFragment"
             android:label="ConfirmationFragment"
             tools:layout="@layout/fragment_confirmation">
             <action
